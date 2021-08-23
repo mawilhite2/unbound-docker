@@ -73,7 +73,13 @@ server:
 
     # Listen to for queries from clients and answer from this network interface
     # and port.
-    interface: 0.0.0.0@53
+    interface: 127.0.0.1
+    port: 5335
+    do-ip4: yes
+    do-udp: yes
+    do-tcp: yes
+    do-ip6: no
+    # interface: 0.0.0.0@53
 
     # Rotates RRSet order in response (the pseudo-random number is taken from
     # the query ID, for speed and thread safety).
@@ -341,14 +347,14 @@ server:
     ###########################################################################
 
     # Include file for local-data and local-data-ptr
-    include: /opt/unbound/etc/unbound/a-records.conf
-    include: /opt/unbound/etc/unbound/srv-records.conf
+    #include: /opt/unbound/etc/unbound/a-records.conf
+    #include: /opt/unbound/etc/unbound/srv-records.conf
 
     ###########################################################################
     # FORWARD ZONE
     ###########################################################################
 
-    include: /opt/unbound/etc/unbound/forward-records.conf
+    #include: /opt/unbound/etc/unbound/forward-records.conf
 
 
 remote-control:
