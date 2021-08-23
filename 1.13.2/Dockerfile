@@ -137,8 +137,8 @@ LABEL org.opencontainers.image.version=${UNBOUND_VERSION} \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.source="https://github.com/MatthewVance/unbound-docker"
 
-EXPOSE 53/tcp
-EXPOSE 53/udp
+EXPOSE 5335/tcp
+EXPOSE 5335/udp
 
 HEALTHCHECK --interval=30s --timeout=30s --start-period=10s --retries=3 CMD drill @127.0.0.1 cloudflare.com || exit 1
 
